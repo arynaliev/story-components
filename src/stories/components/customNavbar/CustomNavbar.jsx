@@ -4,6 +4,8 @@ import "./customNavbar.style.scss";
 import { IconButton } from "@mui/material";
 import { ShoppingCartOutlined, ShoppingCartRounded } from "@mui/icons-material";
 
+/*TODO:Make it mobile friendly, research some good websites to know what you can do extra*/
+
 const CustomNavbar = ({ navList, logoUrl, cart, logoType }) => {
   return (
     <div className="navbar">
@@ -21,9 +23,7 @@ const CustomNavbar = ({ navList, logoUrl, cart, logoType }) => {
             </li>
           ))}
         </ul>
-        <IconButton
-          className={`navbar__nav__button navbar__nav__button_${cart}`}
-        >
+        <IconButton className="navbar__nav__button">
           {cart !== "rounded" ? (
             <ShoppingCartOutlined />
           ) : (

@@ -3,22 +3,32 @@
 const newViewport = {
   iPhone14Pro: {
     name: "iPhone 14 Pro",
-    defaultViewport: "iphone14pro",
+    styles: {
+      width: "390px",
+      height: "844px",
+    },
   },
   iPhone14ProMax: {
     name: "iPhone 14 Pro Max",
-    defaultViewport: "iphone14promax",
+    styles: {
+      width: "430px",
+      height: "932px",
+    },
   },
 };
 
 const preview = {
   parameters: {
-    // viewport: newViewport,
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
+      },
+    },
+    viewport: {
+      viewports: {
+        ...newViewport,
       },
     },
   },
