@@ -1,13 +1,15 @@
 import React from "react";
 
 import "./customNavbar.style.scss";
+import { IconButton } from "@mui/material";
+import { ShoppingCartOutlined, ShoppingCartRounded } from "@mui/icons-material";
 
-const CustomNavbar = ({ navList, logo, cartVariant }) => {
+const CustomNavbar = ({ navList, logoUrl, cart, logoType }) => {
   return (
     <div className="navbar">
       <img
-        className={`navbar__logo navbar__logo_${logo}`}
-        src={logo}
+        className={`navbar__logo navbar__logo_${logoType}`}
+        src={logoUrl}
         alt="Chicago Bakes"
         //   title="Chicago Bakes"
       />
@@ -19,11 +21,15 @@ const CustomNavbar = ({ navList, logo, cartVariant }) => {
             </li>
           ))}
         </ul>
-        <button
-          className={`navbar__nav__button navbar__nav__button_${cartVariant}`}
+        <IconButton
+          className={`navbar__nav__button navbar__nav__button_${cart}`}
         >
-          Cart
-        </button>
+          {cart !== "rounded" ? (
+            <ShoppingCartOutlined />
+          ) : (
+            <ShoppingCartRounded />
+          )}
+        </IconButton>
       </div>
     </div>
   );

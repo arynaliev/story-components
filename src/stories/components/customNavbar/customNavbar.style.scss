@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .navbar {
@@ -12,6 +13,12 @@
   align-items: center;
   border-bottom: 1px solid grey;
 
+  @media only screen and (max-width: 600px) {
+    // body {
+    background-color: lightblue;
+    // }
+  }
+
   &__logo {
     //  margin-top: -85px;
     //  width: 200px;
@@ -20,18 +27,23 @@
     &:hover {
       transform: scale(1.1);
     }
-    &_primaryLogo {
+    &_primary {
       width: 200px;
     }
+    &_secondary {
+      width: 130px;
+      margin-bottom: 10px;
+    }
   }
+
   &__nav {
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     &__ul {
       display: flex;
-      gap: 20px;
+      gap: 25px;
 
       &__li {
         list-style-type: none;
